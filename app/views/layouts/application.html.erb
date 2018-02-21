@@ -4,13 +4,33 @@
     <title>Crumblr</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <%= link_to "Home", "/" %>
-    <%= link_to "About", "/about" %>
+    <div class="container">
+      <div class="mt-4 border-bottom">
+        <ul class="nav nav-pills float-right">
+    <li class="nav-item">
+      <%= link_to "Home", root_url, class: "nav-link" %>
+    </li>
+      <li class="nav-item">
+    <%= link_to "Posts", posts_url, class: "nav-link" %>
+  </li>
+    <li class="nav-item">
+    <%= link_to "About", about_url, class: "nav-link" %>
+  </li>
+  </ul>
+<h1><%= link_to "crumblr", "/" %> <small class="text-muted">// daily self-deprecation</small></h1>
+
+      </div>
+
+  <div class="row">
+    <div class="col-md-6 offset-md-3 mt-4">
     <%= yield %>
+  </div>
+</div>
+  </div>
   </body>
 </html>

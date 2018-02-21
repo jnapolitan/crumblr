@@ -1,0 +1,13 @@
+<h2>
+  <%= link_to post.title, post %>
+</h2>
+
+<p>
+  <%= simple_format post.body %>
+</p>
+
+<p class="text-muted">
+	<small>
+	<%= post.created_at.to_formatted_s(:long) %>
+</small>
+</p>
